@@ -1,0 +1,38 @@
+  .img-label-1,
+  .img-label-2,
+  .img-label-3 {
+      border: 1px solid #cccccc;
+      display: flex;
+      min-height: 210px;
+      width: 100%;
+      padding: auto;
+      border-radius: 10px;
+      text-align: center;
+      justify-content: center;
+      cursor: pointer;
+      background: #f8f9fa;
+      color: #107bff;
+  }
+
+  .text-content-1,
+  .text-content-2,
+  .text-content-3 {
+      padding-top: 90px;
+  }
+
+  #preview-1,
+  #preview-2,
+  #preview-3 {
+      width: 100%;
+      height: 210px;
+      display: none;
+      border-radius: 10px;
+  }
+
+  #preview-a,
+  #preview-b,
+  #preview-c {
+      width: 100%;
+      height: 210px;
+      border-radius: 10px;
+  }

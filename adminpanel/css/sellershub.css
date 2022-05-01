@@ -1,0 +1,37 @@
+   .col-sm-3 {
+       height: 2px;
+   }
+
+   * {
+       font-family: Comic Sans MS;
+
+   }
+
+   .header {
+       font-size: 14px;
+   }
+
+   li {
+       margin: 5px;
+
+   }
+
+   ul li a {
+       width: 100%;
+   }
+
+   .side-bar {
+       height: 500px;
+   }
+
+   ul li ul li a {
+       width: 100%;
+       padding-right: 40px;
+
+   }
+
+   .sub-list li {
+       list-style: none;
+   }
+
+   

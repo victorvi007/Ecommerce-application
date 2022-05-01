@@ -1,0 +1,51 @@
+RewriteEngine on
+
+########## URL FREEZE ########
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteRule ^(.*)$ index.php?$1 [L,QSA]
+########## URL FREEZE ########
+
+
+
+########## RENAME LINKS #########
+RewriteRule ^login login.php [NC,L]
+RewriteRule ^createAccount account.php [NC,L]
+RewriteRule ^about about.php [NC,L]
+RewriteRule ^contact contact.php [NC,L]
+#RewriteRule ^category category.php?category= [NC,L]
+RewriteRule ^form-1 sellershub/form1.php [NC,L]
+RewriteRule ^form-2 sellershub/form2.php [NC,L]
+RewriteRule ^form-3 sellershub/form3.php [NC,L]
+
+RewriteRule ^paymentplan sellershub/payment.php [NC,L]
+RewriteRule ^editProduct editProduct.php [NC,L]
+#RewriteRule ^addProduct addProduct.php [NC,L]
+#RewriteRule ^addProduct addProduct.php [NC,L]
+
+RewriteRule ^error error.php [NC,L]
+
+RewriteRule ^sellersLogin sellersLogin.php [NC,L]
+
+
+#RewriteRule ^item form1.php?id= [NC,L]
+RewriteRule ^success welcome.php [NC,L]
+########## RENAME LINKS #########
+
+
+
+#NC makes the rule non case sensitive
+# L makes this the last rule that this specific condition will match
+
+
+######## REMOVE FILE EXTENTION #####
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php [NC,L]
+######## REMOVE FILE EXTENTION ##########
+
+###########WORKS BUT THERE ARE GLITCHES#########
+RewriteRule ^categories/([0-9a-zA-Z-_]+) category.php?category=$1
+
+RewriteRule ^product/([0-9a-zA-Z-_]+) item.php?url=$1
+###########WORKS BUT THERE ARE GLITCHES#########

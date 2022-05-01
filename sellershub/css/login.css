@@ -1,0 +1,32 @@
+ * {
+     font-family: Comic Sans MS;
+ }
+ .main-form {
+
+     margin: auto;
+
+     border-radius: 50px;
+ }
+
+ .form-control {
+     border-right: 0px;
+     border-left: 0px;
+     border-top: 0px;
+     border-bottom: 2px solid #666;
+     border-radius: 0px;
+     color: #666;
+     background-color: white;
+ }
+
+ .form-control:focus {
+     box-shadow: none !important;
+     background-color: white;
+ }
+
+ .header {
+     opacity: 1;
+     padding: 5px;
+     margin: 10px !important;
+     color: #666;
+
+ }

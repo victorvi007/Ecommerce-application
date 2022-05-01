@@ -1,0 +1,33 @@
+<?php require('inc/header.php'); ?>
+
+<div class="row">
+    <div class="col-md-2 col-12 m-0 p-0 shadow bg-light"><?php require('inc/sidebar.php'); ?></div>
+    <div class="col-md-10 m-0 p-0">
+
+    </div>
+</div>
+
+
+<script>
+    $(document).ready(function () {
+        $('.sub-list').hide();
+        $('.logo').html("<i class='fad fa-caret-right'></i>")
+
+    })
+
+    $('.product').click(function () {
+
+        $('.sub-list').toggle(500);
+        $('.logo').toggle()
+    })
+
+
+
+
+
+</script>
+</div>
+
+</body>
+
+</html>

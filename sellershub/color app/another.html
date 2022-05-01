@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link href="../css/all.min.css" rel="stylesheet">
+    <script src="../js/jquery.js"></script>
+</head>
+<body>
+    <form action="">
+        <html>
+<head>
+<script type="text/javascript" language="javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script> 
+<script type="text/javascript" language="javascript" src="http://rangyinputs.googlecode.com/files/textinputs_jquery.js"></script>
+<script type="text/javascript" language="javascript">
+
+$(document).ready(function() {
+
+        $('textarea').bind('mouseup',function() { $(this).replaceSelectedText('hello');});
+});
+</script>
+</head>
+<body>
+<textarea style="width:300px; height:300px;">
+AAA
+</textarea>
+</body>
+</html>
+    <div class="form-container card bg-white p-2" id="container">
+        <h6>Inventrory:</h6>
+        <div class="form-group form-inline">
+            <label for="quantity">Total quantity:</label>
+            <input type="text" name="total_quantity" id="totalQuantity" class="form-control">
+        </div>
+        <div class="form-group">
+            <button type="button" class="btn btn-info" id="addVariation" > <i class="fal fa-plus"></i> Add Another Product Variation</button>
+            <button type="button" class="btn btn-info" id="removeVariation" > <i class="fal fa-plus"></i>Remove Variation</button>
+        </div>
+    
+    
+        <div class="row mx-1 my-1">
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-md-2 col-6 bg-info text-white">Size</div>
+                    <div class="col-md-3 col-6 bg-info text-white">Color</div>
+                    <div class="col-md-2 col-6 bg-info text-white">Price</div>
+                    <div class="col-md-3 col-6 bg-info text-white">Conpare Price</div>
+                    <div class="col-md-2 col-6 bg-info text-white">Quantity</div>
+                </div>
+            </div>
+    
+        </div>
+        <div class="row border " id="">
+            
+            <div class="col-md-2 col-6"><input type="text" name="size1" id="size1" class="form-control"placeholder="size"></div>
+            <div class="col-md-3 col-6"><input type="text" name="color1" id="color1" class="form-control"placeholder="color"></div>
+            <div class="col-md-2 col-6"><input type="number" name="price1" min="0" step="10" id="price1"class="form-control" placeholder="price"></div>
+            <div class="col-md-3 col-6"><input type="number" min="0" step="10" name="compare_price1" id="conparePrice"class="form-control" required="required" placeholder="compare price"></div>
+            <div class="col-md-2 col-6"><input type="number" min="0" name="quantity1" id="quantity1" step="1"class="form-control" placeholder="quantity"></div>
+        </div>
+        
+    
+    </div>
+    </form>
+    <script>
+        
+          var sizeCount =2;
+          var colorCount =2;
+          var priceCount =2;
+          var conparePriceCount =2;
+          var quantityCount =2;
+          var idSizeCount =2;
+
+          var idColorCount =2;
+          var idPriceCount =2;
+          var idConparePriceCount =2;
+          var idQuantityCount =2;
+          var array = [];
+
+        $('#addVariation').click(function(){
+
+            var row = document.createElement('div');
+            var col1 = document.createElement('div');
+            var col2 = document.createElement('div');
+            var col3 = document.createElement('div');
+            var col4 = document.createElement('div');
+            var col5 = document.createElement('div');
+            var col6 = document.createElement('div');
+
+            var input1 = document.createElement('input');
+            var input2 = document.createElement('input');
+            var input3 = document.createElement('input');
+            var input4 = document.createElement('input');
+            var input5 = document.createElement('input');
+
+            row.setAttribute('class','row border ');
+            row.setAttribute('id','rowAdd');
+            col1.setAttribute('class','col-md-2 col-6');
+            col2.setAttribute('class', 'col-md-3 col-6');
+            col3.setAttribute('class', 'col-md-2 col-6');
+            col4.setAttribute('class', 'col-md-3 col-6');
+            col5.setAttribute('class', 'col-md-2 col-6');
+            // col6.setAttribute('class', 'col-md-2 col-6 mb-2');
+            
+            input1.setAttribute('type','text');
+            input2.setAttribute('type','text');
+            input3.setAttribute('type','number');
+            input4.setAttribute('type','number');
+            input5.setAttribute('type','number');
+
+            input1.setAttribute('name','color'+ sizeCount++);
+            input2.setAttribute('name','size'+colorCount++);
+            input3.setAttribute('name','price'+ priceCount++);
+            input4.setAttribute('name','compare_price'+ conparePriceCount++);
+            input5.setAttribute('name','quantity'+ quantityCount++);
+
+            input1.setAttribute('id', 'size' + idColorCount++);
+            input2.setAttribute('id', 'color' + idPriceCount++);
+            input3.setAttribute('id', 'price' + priceCount++);
+            input4.setAttribute('id', 'conparePrice' + idConparePriceCount++);
+            input5.setAttribute('id', 'quantity'+ idQuantityCount++);
+
+            input1.setAttribute('class', 'form-control');
+            input2.setAttribute('class', 'form-control');
+            input3.setAttribute('class', 'form-control');
+            input4.setAttribute('class', 'form-control');
+            input5.setAttribute('class', 'form-control');
+
+           
+
+
+            input1.setAttribute('placeholder', 'Size');
+            input2.setAttribute('placeholder', 'Color');
+            input3.setAttribute('placeholder', 'Price');
+            input4.setAttribute('placeholder', 'Conpare Price');
+            input5.setAttribute('placeholder', 'Qantity');
+
+            input3.setAttribute('min', '0');
+            input4.setAttribute('min', '0');
+            input5.setAttribute('min', '0');
+
+            input3.setAttribute('step', '10');
+            input4.setAttribute('step', '10');
+            input5.setAttribute('step', '1')
+
+            col1.append(input1);
+            col2.append(input2);
+            col3.append(input3);
+            col4.append(input4);
+            col5.append(input5);
+
+            row.append(col1);
+            row.append(col2);
+            row.append(col3);
+            row.append(col4);
+            row.append(col5);
+           
+                console.log(array);    
+
+            if(array.length <6){
+                 array.push(row);
+                 $('#container').append(row);
+               // console.log(row);    
+            }
+          
+        })
+
+       $('#removeVariation').click(function(){
+            $('#rowAdd:last').remove()
+            array.pop();
+            console.log(array);
+       })
+    </script>
+</body>
+</html>

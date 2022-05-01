@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link href="../css/all.min.css" rel="stylesheet">
+    <script src="../js/jquery.js"></script>
+
+    <style>
+        * {
+            font-family: Comic Sans MS;
+
+
+        }
+
+        p {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        .bg-white {
+            padding: 0px;
+            border: 0px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-group">
+            <form action="index.html">
+                   <label for="">Color</label>
+            <input type="text" name="textarea" id="textarea">
+            <input type="number" name="numArea" id="numArea">
+
+            <input type="button" value="send" id="add">
+            <div id="box2"></div>
+            <div id="box"></div>
+            </form>
+         
+        </div>
+        <!-- <div class="form-group">
+            <label for="">Size</label>
+            <input type="submit" value="Add" id="addNum">
+        </div> -->
+
+        <div class="form-group card w-50 pr-3 pl-1">
+            <div class="row">
+                <div class="col-4">
+
+                    <p>size: <span id="sizeDisplay"></span> </p>
+                    <p>color: <span id="colorDisplay"></span> </p>
+                    <input type="hidden" value="size" class="bg-white">
+                    <input type="hidden" value="color" class="bg-white">
+                </div>
+                <div class="col-6 p-2">
+                    <input type="number" name="" id="" class="form-control m-0">
+                </div>
+                <div class="col-2 p-2">
+                    <button type="button" class="btn btn-danger" id="remove">X</button>
+                </div>
+            </div>
+
+        </div>
+        <div id="box3"></div>
+        <div id="test" class="p-3 bg-warning"></div>
+
+
+        
+
+
+    </div>
+
+
+
+    <script>
+
+
+        var textBox = document.getElementById('textarea');
+        var btn = document.getElementById('add');
+        var container = document.getElementById('box');
+        var container3 = document.getElementById('box3');
+        var test = document.getElementById('test');
+        var varietiesArray = [];
+        var countId = 1;
+        var countName = 1;
+        var countHiddenSize = 1;
+        var countHiddenColor = 1;
+        var cancelfunction = 1;
+        var cancel = 1;
+       // var formCount = 1;
+
+
+        ////VARITES BEGINS///
+   
+
+        $('#add').click(function() {
+
+            var formGroup = document.createElement('div');
+            var row = document.createElement('div');
+            var colA = document.createElement('div');
+            var colB = document.createElement('div');
+            var colC = document.createElement('div');
+            var input = document.createElement('input');
+            var inputCancel = document.createElement('button');
+            var paraSize = document.createElement('p');
+            var paraColor = document.createElement('p');
+            var spanSize = document.createElement('span');
+            var spanColor = document.createElement('span');
+            var hiddenSize = document.createElement('input');
+            var hiddenColor = document.createElement('input');
+
+
+            if (varietiesArray.length < 6) {
+                formGroup.setAttribute('class', 'form-group border w-50 pr-3 pl-1');
+                formGroup.setAttribute('id', 'form-group');
+                row.setAttribute('class', 'row');
+                colA.setAttribute('class', 'col-4');
+                colB.setAttribute('class', 'col-6');
+                colC.setAttribute('class', 'col-2 p-2');
+                spanSize.setAttribute('id', 'sizeDisplay');
+                spanColor.setAttribute('id', 'colorDisplay');
+                input.setAttribute('type', 'number');
+                inputCancel.setAttribute('type', 'button');
+                inputCancel.append('X');
+                input.setAttribute('class', 'form-control m-2');
+                inputCancel.setAttribute('class', 'btn btn-danger');
+                inputCancel.setAttribute('id', 'cancel_' + cancel++);
+                inputCancel.setAttribute('onclick', 'cancel_' + cancelfunction++ + '()');
+                input.setAttribute('placeholder', 'quantity available');
+                paraSize.setAttribute('class', 'text-primary');
+                paraColor.setAttribute('style', 'color:purple;');
+
+                hiddenSize.setAttribute('type', 'hidden');
+                hiddenColor.setAttribute('type', 'hidden');
+                hiddenSize.setAttribute('name', 'hiddenSize' + countHiddenSize++);
+                hiddenColor.setAttribute('name', 'hiddenColor' + countHiddenColor++);
+                hiddenSize.setAttribute('value', numArea.value);
+                hiddenColor.setAttribute('value', textBox.value);
+
+
+                paraSize.append('Size:');
+                paraColor.append('Color:');
+                spanSize.append(numArea.value);
+                spanColor.append(textBox.value);
+
+                paraSize.append(hiddenSize);
+                paraColor.append(hiddenColor);
+
+                paraSize.append(spanSize);
+                paraColor.append(spanColor);
+                colA.append(paraSize, paraColor);
+                colB.append(input);
+                colC.append(inputCancel);
+               
+                row.append(colA);
+                row.append(colB);
+                row.append(colC);
+
+                formGroup.append(row);
+                    container3.append(formGroup);
+                    
+                 console.log(formGroup);
+
+
+
+            } else {
+                alert('varance at its max');
+                // console.log(colorBtnArray.length);
+            }
+
+
+        })
+
+
+
+
+
+
+
+
+        $('#remove').click(function(){
+            $('.form-group:last').remove();
+
+        })
+
+        
+
+        // function cancel_2() {
+        //      container3.remove('form-group-2');
+
+        // }
+
+
+        // function cancel_3() {
+        //     container3.remove('form-group-3');
+
+        // }
+
+        // function cancel_4() {
+        //    container3.remove('form-group-4');
+
+        // }
+
+        // function cancel_5() {
+        //     container3.remove('form-group-5');
+
+        // }
+
+        // function cancel_6() {
+        //     container3.remove('form-group-6');
+
+        // }
+
+
+
+    </script>
+</body>
+
+</html>
